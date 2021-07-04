@@ -2,6 +2,7 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from '../components/seo'
 import {graphql, Link} from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 // markup
 const IndexPage = ({data}) => {
@@ -9,6 +10,9 @@ const IndexPage = ({data}) => {
   return (
     <Layout>
       <Seo title={`Home Page`} />
+      <StaticImage 
+        src=""
+        />
       {posts.map((post) => {
         return (
           <Link to={post.slug} key={post.slug}>

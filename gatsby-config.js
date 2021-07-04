@@ -21,6 +21,8 @@ module.exports = {
         preset: `@theme-ui/preset-funk`,
         prismPreset: `prism-okaidia`
       },
-    }
+    },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharpe`,
   ],
 };
