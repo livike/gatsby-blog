@@ -1,5 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import Layout from "../components/layout"
+import Seo from '../components/seo'
 
 // styles
 const pageStyles = {
@@ -27,27 +29,30 @@ const codeStyles = {
 // markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
+    <Layout>
+      <Seo  title={`404 Page`}/>
+      <main style={pageStyles}>
+          <title>Not found</title>
+          <h1 style={headingStyles}>Page not found</h1>
+          <p style={paragraphStyles}>
+            Sorry{" "}
+            <span role="img" aria-label="Pensive emoji">
+              😔
+            </span>{" "}
+            we couldn’t find what you were looking for.
             <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
+            {process.env.NODE_ENV === "development" ? (
+              <>
+                <br />
+                Try creating a page in <code style={codeStyles}>src/pages/</code>.
+                <br />
+              </>
+            ) : null}
             <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+            <Link to="/">Go home</Link>.
+          </p>
+      </main>
+    </Layout>
   )
 }
 
